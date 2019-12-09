@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/cengshaoxun/Programs/Lexer/DFA_DFAo.cpp
+set
+-
+type.h
+/Users/cengshaoxun/Programs/Lexer/type.h
+
+/Users/cengshaoxun/Programs/Lexer/type.h
+string
+-
+vector
+-
+set
+-
+
