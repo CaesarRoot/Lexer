@@ -17,7 +17,7 @@ typedef struct edge {
 } Edge;
 
 typedef struct node {
-    std::vector<Edge *> next;
+    std::set<Edge *> next;
     std::set<std::string> type;    // 如果该节点是终态，那么type的值为该词法的名称
 } Node;
 

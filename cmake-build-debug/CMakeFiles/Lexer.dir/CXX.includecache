@@ -7,6 +7,20 @@
 #IncludeRegexTransform: 
 
 /Users/cengshaoxun/Programs/Lexer/DFA_DFAo.cpp
+iostream
+-
+set
+-
+vector
+-
+map
+-
+type.h
+/Users/cengshaoxun/Programs/Lexer/type.h
+DFA_DFAo.h
+/Users/cengshaoxun/Programs/Lexer/DFA_DFAo.h
+
+/Users/cengshaoxun/Programs/Lexer/DFA_DFAo.h
 set
 -
 type.h

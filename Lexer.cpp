@@ -9,6 +9,8 @@
 #include "READ_file.h"
 #include <map>
 #include <set>
+#include "DFA_DFAo.h"
+#include "Utils.h"
 
 using namespace std;
 
@@ -27,9 +29,17 @@ int main() {
 
     FA *fa = REs_to_NFA(regs);
     NFA_to_DFA(fa, maps, reverseMap, numsMap, startPoint, endPoints);
-    predict("10.0", startPoint);
-    predict("asdf1sdf", startPoint);
-    predict("1a", startPoint);
+    set<Node*> nodes;
+    for(auto n:maps){
+        nodes.emplace(n.second);
+    }
+    FA* finalFA = DFA_to_DFAo(nodes, startPoint);
+    printTable(finalFA);
+
+    predict("aaaaaaaa", finalFA->start);
+    predict("10.0", finalFA->start);
+    predict("1a", finalFA->start);
+
 
 //    string re1 = parse_to_prefix_form("((|0|1|2|3|4|5|6|7|8|9)*)");
 //    string re2 = parse_to_prefix_form("ca");

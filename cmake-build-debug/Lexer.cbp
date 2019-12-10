@@ -120,6 +120,12 @@
 		<Unit filename="/Users/cengshaoxun/Programs/Lexer/RE_Suffix.h">
 			<Option target="Lexer"/>
 		</Unit>
+		<Unit filename="/Users/cengshaoxun/Programs/Lexer/Utils.cpp">
+			<Option target="Lexer"/>
+		</Unit>
+		<Unit filename="/Users/cengshaoxun/Programs/Lexer/Utils.h">
+			<Option target="Lexer"/>
+		</Unit>
 		<Unit filename="/Users/cengshaoxun/Programs/Lexer/type.h">
 			<Option target="Lexer"/>
 		</Unit>

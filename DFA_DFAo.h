@@ -4,5 +4,9 @@
 
 #ifndef LEXER_DFA_DFAO_H
 #define LEXER_DFA_DFAO_H
+#include <set>
+#include "type.h"
+
+FA* DFA_to_DFAo(std::set<Node *> &maps, Node *startPoint);
 
 #endif //LEXER_DFA_DFAO_H

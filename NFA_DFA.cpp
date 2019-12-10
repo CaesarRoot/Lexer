@@ -71,7 +71,7 @@ void NFA_to_DFA(FA *fa, map<set<Node *>, Node *> &maps,
                     // 加入一个新的节点
                     Node *newNode = new Node;
                     // 连接边
-                    now->next.push_back(new Edge{edge, newNode});
+                    now->next.emplace(new Edge{edge, newNode});
                     maps.emplace(tempstate, newNode);
                     numsMap.emplace(tempstate, allStates.size());
                     reverseMap.emplace(newNode, tempstate);
@@ -79,7 +79,7 @@ void NFA_to_DFA(FA *fa, map<set<Node *>, Node *> &maps,
                     // 找到原有节点
                     // 连接上边
                     Node *oldNode = maps[tempstate];
-                    now->next.push_back(new Edge{edge, oldNode});
+                    now->next.emplace(new Edge{edge, oldNode});
                 }
             }
         }

@@ -28,12 +28,12 @@ FA *REs_to_NFA(vector<RE> Regs) {
                 NFAs.pop();
                 Node *newHead = new Node;
                 // 新建一个初始节点
-                newHead->next.push_back(new Edge{"", former1->start});
-                newHead->next.push_back(new Edge{"", former2->start});
+                newHead->next.emplace(new Edge{"", former1->start});
+                newHead->next.emplace(new Edge{"", former2->start});
                 // 新建一个终止节点
                 Node *newEnd = new Node;
-                former1->end[0]->next.push_back(new Edge{"", newEnd});
-                former2->end[0]->next.push_back(new Edge{"", newEnd});
+                former1->end[0]->next.emplace(new Edge{"", newEnd});
+                former2->end[0]->next.emplace(new Edge{"", newEnd});
                 FA *newFA = new FA;
                 newFA->start = newHead;
                 newFA->end.push_back(newEnd);
@@ -48,7 +48,7 @@ FA *REs_to_NFA(vector<RE> Regs) {
                 NFAs.pop();
                 // 将former1的终态和former2的起始状态连接
                 // 这里结束状态都只有一个
-                former1->end[0]->next.push_back(new Edge{"", former2->start});
+                former1->end[0]->next.emplace(new Edge{"", former2->start});
                 FA *newFA = new FA;
                 newFA->start = former1->start;
                 newFA->end.assign(former2->end.begin(), former2->end.end());
@@ -64,10 +64,10 @@ FA *REs_to_NFA(vector<RE> Regs) {
                 FA *newFA = new FA;
                 Node *newHead = new Node;
                 Node *newEnd = new Node;
-                newHead->next.push_back(new Edge{"", former1->start});
-                newHead->next.push_back(new Edge{"", newEnd});
-                former1->end[0]->next.push_back(new Edge{"", newEnd});
-                former1->end[0]->next.push_back(new Edge{"", former1->start});
+                newHead->next.emplace(new Edge{"", former1->start});
+                newHead->next.emplace(new Edge{"", newEnd});
+                former1->end[0]->next.emplace(new Edge{"", newEnd});
+                former1->end[0]->next.emplace(new Edge{"", former1->start});
                 newFA->start = newHead;
                 newFA->end.push_back(newEnd);
                 NFAs.push(newFA);
@@ -78,7 +78,7 @@ FA *REs_to_NFA(vector<RE> Regs) {
                 Node *start = new Node;
                 Node *end = new Node;
                 // 连接开始和结束
-                start->next.push_back(new Edge{empty + ch, end});
+                start->next.emplace(new Edge{empty + ch, end});
                 FA *fa = new FA;
                 // 记录开始节点
                 fa->start = start;
@@ -100,8 +100,8 @@ FA *REs_to_NFA(vector<RE> Regs) {
         FA *former1 = NFAs.top();
         NFAs.pop();
         Node *newHead = new Node;
-        newHead->next.push_back(new Edge{"", former1->start});
-        newHead->next.push_back(new Edge{"", final->start});
+        newHead->next.emplace(new Edge{"", former1->start});
+        newHead->next.emplace(new Edge{"", final->start});
         final->start = newHead;
         final->end.insert(final->end.begin(), former1->end.begin(), former1->end.end());
         delete former1;

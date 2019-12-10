@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lexer.dir/READ_File.cpp.o"
   "CMakeFiles/Lexer.dir/RE_NFA.cpp.o"
   "CMakeFiles/Lexer.dir/RE_Suffix.cpp.o"
+  "CMakeFiles/Lexer.dir/Utils.cpp.o"
   "Lexer"
   "Lexer.pdb"
 )

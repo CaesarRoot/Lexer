@@ -3,13 +3,16 @@
 
 CMakeFiles/Lexer.dir/DFA_DFAo.cpp.o
  /Users/cengshaoxun/Programs/Lexer/DFA_DFAo.cpp
+ /Users/cengshaoxun/Programs/Lexer/DFA_DFAo.h
  /Users/cengshaoxun/Programs/Lexer/type.h
 CMakeFiles/Lexer.dir/Lexer.cpp.o
+ /Users/cengshaoxun/Programs/Lexer/DFA_DFAo.h
  /Users/cengshaoxun/Programs/Lexer/Lexer.cpp
  /Users/cengshaoxun/Programs/Lexer/NFA_DFA.h
  /Users/cengshaoxun/Programs/Lexer/READ_file.h
  /Users/cengshaoxun/Programs/Lexer/RE_NFA.h
  /Users/cengshaoxun/Programs/Lexer/RE_Suffix.h
+ /Users/cengshaoxun/Programs/Lexer/Utils.h
  /Users/cengshaoxun/Programs/Lexer/type.h
 CMakeFiles/Lexer.dir/NFA_DFA.cpp.o
  /Users/cengshaoxun/Programs/Lexer/NFA_DFA.cpp
@@ -27,3 +30,7 @@ CMakeFiles/Lexer.dir/RE_NFA.cpp.o
 CMakeFiles/Lexer.dir/RE_Suffix.cpp.o
  /Users/cengshaoxun/Programs/Lexer/RE_Suffix.cpp
  /Users/cengshaoxun/Programs/Lexer/RE_Suffix.h
+CMakeFiles/Lexer.dir/Utils.cpp.o
+ /Users/cengshaoxun/Programs/Lexer/Utils.cpp
+ /Users/cengshaoxun/Programs/Lexer/Utils.h
+ /Users/cengshaoxun/Programs/Lexer/type.h
