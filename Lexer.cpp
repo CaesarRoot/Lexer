@@ -39,18 +39,8 @@ int main() {
     predict("aaaaaaaa", finalFA->start);
     predict("10.0", finalFA->start);
     predict("1a", finalFA->start);
-
-
-//    string re1 = parse_to_prefix_form("((|0|1|2|3|4|5|6|7|8|9)*)");
-//    string re2 = parse_to_prefix_form("ca");
-//    string re3 = parse_to_prefix_form("a*");
-//    regs.push_back({"name1", re1});
-//    regs.push_back({"name2", re2});
-//    regs.push_back({"name3", re3});
-//    NFA_to_DFA(REs_to_NFA(regs));
-//    string re = parse_to_prefix_form("a|b");
-//    vector<RE> regs;
-//    regs.push_back({"A|B", re});
-//    NFA_to_DFA(REs_to_NFA(regs));
+    predict("3", finalFA->start);
+    predict("while", finalFA->start);
+    predict("auto", finalFA->start);
     return 0;
 }
