@@ -7,6 +7,6 @@
 #include <set>
 #include "type.h"
 
-FA* DFA_to_DFAo(std::set<Node *> &maps, Node *startPoint);
+FA *DFA_to_DFAo(FA *fa);
 
 #endif //LEXER_DFA_DFAO_H

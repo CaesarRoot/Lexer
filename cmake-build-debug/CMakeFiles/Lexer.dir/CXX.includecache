@@ -34,20 +34,6 @@ DFA_DFAo.h
 Utils.h
 /Users/cengshaoxun/Programs/Lexer/Utils.h
 
-/Users/cengshaoxun/Programs/Lexer/NFA_DFA.cpp
-iostream
--
-set
--
-type.h
-/Users/cengshaoxun/Programs/Lexer/type.h
-queue
--
-map
--
-NFA_DFA.h
-/Users/cengshaoxun/Programs/Lexer/NFA_DFA.h
-
 /Users/cengshaoxun/Programs/Lexer/NFA_DFA.h
 type.h
 /Users/cengshaoxun/Programs/Lexer/type.h

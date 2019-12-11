@@ -31,6 +31,7 @@ void dfsPrint(const Node *node, map<const Node *, int> &printMaps, set<const Nod
         cout << "I" << from << " " << edge->value << " " << "I" << to << endl;
     }
     printed.emplace(node);
-    for (auto edge:node->next)
-        dfsPrint(edge->node, printMaps, printed);
+    if (!node->next.empty())
+        for (auto edge:node->next)
+            dfsPrint(edge->node, printMaps, printed);
 }

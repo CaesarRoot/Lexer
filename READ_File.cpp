@@ -18,8 +18,8 @@ void readFile(vector<RE> &regs) {
     string re;
     while (f >> type) {
         f >> re;
-        cout << type << endl;
-        cout << re << endl;
+//        cout << type << endl;
+//        cout << re << endl;
         re = parse_to_prefix_form(re);
         regs.push_back({type, re});
     }

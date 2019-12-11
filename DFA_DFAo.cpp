@@ -16,10 +16,15 @@ bool alreadyExistEqual(const set<set<Edge *>> &edgeGroups,
 
 set<pair<string, int>> changeEdges(const set<Edge *> &edges, map<Node *, int> &keyMaps);
 
+void addAllNode(Node *node, set<Node *> &nodes);
+
 /**
  * @param maps 所有的DFA状态节点
  */
-FA *DFA_to_DFAo(set<Node *> &maps, Node *startPoint) {
+FA *DFA_to_DFAo(FA *fa) {
+    set<Node*>allNodes;
+    addAllNode(fa->start, allNodes);
+
     // 存储优化后的状态
     vector<set<Node *>> optimized;
     // 状态分组的唯一编号
@@ -31,7 +36,7 @@ FA *DFA_to_DFAo(set<Node *> &maps, Node *startPoint) {
     // 初始步骤
     // 先划分出终态 和 非终态的点的集合
     set<Node *> notEnd;
-    for (auto node :maps) {
+    for (auto node :allNodes) {
         // 非终态先都加入一个集合中
         if (node->type.empty()) {
             notEnd.insert(node);
@@ -100,8 +105,8 @@ FA *DFA_to_DFAo(set<Node *> &maps, Node *startPoint) {
                 if (newStatesMap.find(edge_group) != newStatesMap.end()) {
                     newStatesMap[edge_group].emplace(node);
                 }
-                // 当前不存在此出边集合
-                // 新建一个状态集合
+                    // 当前不存在此出边集合
+                    // 新建一个状态集合
                 else {
                     set<Node *> newState = {node};
                     newStatesMap.emplace(edge_group, newState);
@@ -127,7 +132,7 @@ FA *DFA_to_DFAo(set<Node *> &maps, Node *startPoint) {
                         } else
                             // 减1是因为前面是一个++操作
                             // 为了保证同一个集合中的groupKey都相等必须要-1
-                            keyMaps[node] = groupKey-1;
+                            keyMaps[node] = groupKey - 1;
                     }
                     // 新建状态集合加入临时结果集合
                     new_optimized.push_back(newState);
@@ -175,7 +180,7 @@ FA *DFA_to_DFAo(set<Node *> &maps, Node *startPoint) {
         representative->type = endTypes;
         // 如果该状态包含原来的起点节点
         // 那么将最后的状态机的起始状态设置为这个新建的代表节点
-        if (state.find(startPoint) != state.end())
+        if (state.find(fa->start) != state.end())
             finalFA->start = representative;
     }
 
@@ -195,5 +200,15 @@ set<pair<string, int>> changeEdges(const set<Edge *> &edges, map<Node *, int> &k
         edge_group.emplace(edge->value, keyMaps[edge->node]);
     }
     return edge_group;
+}
+
+void addAllNode(Node *node, set<Node *> &nodes) {
+    nodes.emplace(node);
+    for (auto e:node->next) {
+        if (nodes.find(e->node) == nodes.end()) {
+            nodes.emplace(e->node);
+            addAllNode(e->node, nodes);
+        }
+    }
 }
 

@@ -11,12 +11,7 @@
 
 using namespace std;
 
-void NFA_to_DFA(FA *fa,
-                map<set<Node *>, Node *> &maps,
-                map<Node *, set<Node *>> &reverseMap,
-                map<set<Node *>, int> &numsMap,
-                Node *startPoint,
-                set<Node *> &endPoints);
+FA* NFA_to_DFA(FA *fa);
 void predict(string word, Node *startPoint);
 
 #endif //LEXER_NFA_DFA_H

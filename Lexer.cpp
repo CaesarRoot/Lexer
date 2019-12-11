@@ -17,23 +17,12 @@ using namespace std;
 int main() {
     vector<RE> regs;
     readFile(regs);
-    for (auto r:regs) {
-        cout << r.rules << endl;
-    }
-
-    map<set<Node *>, Node *> maps;
-    map<Node *, set<Node *>> reverseMap;
-    map<set<Node *>, int> numsMap;
-    Node *startPoint = new Node;
-    set<Node *> endPoints;
 
     FA *fa = REs_to_NFA(regs);
-    NFA_to_DFA(fa, maps, reverseMap, numsMap, startPoint, endPoints);
-    set<Node*> nodes;
-    for(auto n:maps){
-        nodes.emplace(n.second);
-    }
-    FA* finalFA = DFA_to_DFAo(nodes, startPoint);
+    fa = NFA_to_DFA(fa);
+    printTable(fa);
+    cout << " ----------------- " << endl;
+    FA* finalFA = DFA_to_DFAo(fa);
     printTable(finalFA);
 
     predict("aaaaaaaa", finalFA->start);

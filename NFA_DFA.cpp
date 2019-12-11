@@ -16,27 +16,14 @@ set<Node *> subset_construct(const set<Node *> &state, const FA *fa, string edge
 
 set<string> findAllEdge(set<Node *> state);
 
-bool already_in_set(set<set<Node *>> allStates, set<Node *> state);
 
-void print(set<Node *>);
-
-void printTable(map<set<Node *>, Node *> &maps,
-                map<Node *, set<Node *>> &reverseMap,
-                map<set<Node *>, int> &numsMap,
-                Node *startPoint,
-                set<Node *> &endPoints);
-
-void NFA_to_DFA(FA *fa, map<set<Node *>, Node *> &maps,
-                map<Node *, set<Node *>> &reverseMap,
-                map<set<Node *>, int> &numsMap,
-                Node *startPoint,
-                set<Node *> &endPoints) {
+FA* NFA_to_DFA(FA *fa) {
     set<set<Node *>> allStates;
     // 用来形成边
-//    map<set<Node *>, Node *> maps;
-//    map<Node *, set<Node *>> reverseMap;
+    map<set<Node *>, Node *> maps;
+    map<Node *, set<Node *>> reverseMap;
     // 状态和数字的映射
-//    map<set<Node *>, int> numsMap;
+    map<set<Node *>, int> numsMap;
     queue<set<Node *>> to_search;
 
     // 第一个core为起始状态
@@ -47,7 +34,7 @@ void NFA_to_DFA(FA *fa, map<set<Node *>, Node *> &maps,
     allStates.emplace(state);
     numsMap.emplace(state, allStates.size());
     to_search.push(state);
-//    startPoint = new Node;
+    Node* startPoint = new Node;
     maps.emplace(state, startPoint);
     reverseMap.emplace(startPoint, state);
     // 待搜索的状态队列不为空
@@ -84,7 +71,7 @@ void NFA_to_DFA(FA *fa, map<set<Node *>, Node *> &maps,
             }
         }
     }
-//    set<Node *> endPoints;
+    set<Node *> endPoints;
     for (auto tstate:allStates) {
         for (auto node:tstate) {
             if (!node->type.empty()) {
@@ -94,29 +81,10 @@ void NFA_to_DFA(FA *fa, map<set<Node *>, Node *> &maps,
             }
         }
     }
-    printTable(maps, reverseMap, numsMap, startPoint, endPoints);
+    fa->start = startPoint;
+    return fa;
 }
 
-void printTable(map<set<Node *>, Node *> &maps,
-                map<Node *, set<Node *>> &reverseMap,
-                map<set<Node *>, int> &numsMap,
-                Node *startPoint,
-                set<Node *> &endPoints) {
-    for (auto node: maps) {
-        for (auto e:node.second->next) {
-            cout << "I" << numsMap[node.first] << " "
-                 << e->value << " "
-                 << "I" << numsMap[reverseMap[e->node]] << " "
-                 << endl;
-        }
-    }
-    cout << "start point " << "I" << numsMap[reverseMap[startPoint]] << endl;
-    cout << "end points" << endl;
-    for (auto node:endPoints) {
-        for (auto t:node->type)
-            cout << "I" << numsMap[reverseMap[node]] << " " << t << endl;
-    }
-}
 
 
 /**
@@ -135,30 +103,6 @@ set<string> findAllEdge(set<Node *> state) {
     return ans;
 }
 
-bool already_in_set(set<set<Node *>> allStates, set<Node *> state) {
-    for (auto s:allStates) {
-        if (s.size() == state.size()) {
-            bool flag = true;
-            for (auto sv:s) {
-                if (state.find(sv) != state.end()) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) return true;
-        }
-    }
-    return false;
-}
-
-void print(set<Node *> state) {
-    for (auto n :state) {
-        for (auto nn:n->next) {
-            if (nn->value.empty())cout << "@" << endl;
-            else cout << nn->value << endl;
-        }
-    }
-}
 
 /**
  * @param state
