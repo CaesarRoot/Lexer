@@ -33,6 +33,8 @@ DFA_DFAo.h
 /Users/cengshaoxun/Programs/Lexer/DFA_DFAo.h
 Utils.h
 /Users/cengshaoxun/Programs/Lexer/Utils.h
+fstream
+-
 
 /Users/cengshaoxun/Programs/Lexer/NFA_DFA.h
 type.h

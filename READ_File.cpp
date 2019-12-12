@@ -10,9 +10,9 @@
 
 using namespace std;
 
-void readFile(vector<RE> &regs) {
+void readFile(vector<RE> &regs, string fileName) {
     ifstream f;
-    f.open("../RE.l", ios::in);
+    f.open(fileName, ios::in);
     if (!f) cout << "error" << endl;
     string type;
     string re;

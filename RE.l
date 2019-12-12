@@ -48,6 +48,9 @@ ASSIGN =
 AND &&
 OR \|\|
 NOT !
+ADD_ASSIGN +=
+SUB_ASSIGN -=
+
 
 COMMA ,
 SEMICOLON ;

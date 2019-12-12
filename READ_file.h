@@ -8,6 +8,6 @@
 #include <vector>
 #include "type.h"
 
-void readFile(std::vector<RE> &regs);
+void readFile(std::vector<RE> &regs, std::string fileName);
 
 #endif //LEXER_READ_FILE_H

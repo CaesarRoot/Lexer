@@ -150,6 +150,33 @@ DFA_DFAo.cpp.s:
 	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/DFA_DFAo.cpp.s
 .PHONY : DFA_DFAo.cpp.s
 
+Generate_C.o: Generate_C.cpp.o
+
+.PHONY : Generate_C.o
+
+# target to build an object file
+Generate_C.cpp.o:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Generate_C.cpp.o
+.PHONY : Generate_C.cpp.o
+
+Generate_C.i: Generate_C.cpp.i
+
+.PHONY : Generate_C.i
+
+# target to preprocess a source file
+Generate_C.cpp.i:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Generate_C.cpp.i
+.PHONY : Generate_C.cpp.i
+
+Generate_C.s: Generate_C.cpp.s
+
+.PHONY : Generate_C.s
+
+# target to generate assembly for a file
+Generate_C.cpp.s:
+	$(MAKE) -f CMakeFiles/Lexer.dir/build.make CMakeFiles/Lexer.dir/Generate_C.cpp.s
+.PHONY : Generate_C.cpp.s
+
 Lexer.o: Lexer.cpp.o
 
 .PHONY : Lexer.o
@@ -324,6 +351,9 @@ help:
 	@echo "... DFA_DFAo.o"
 	@echo "... DFA_DFAo.i"
 	@echo "... DFA_DFAo.s"
+	@echo "... Generate_C.o"
+	@echo "... Generate_C.i"
+	@echo "... Generate_C.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"

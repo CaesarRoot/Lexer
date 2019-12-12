@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Lexer.dir/DFA_DFAo.cpp.o"
+  "CMakeFiles/Lexer.dir/Generate_C.cpp.o"
   "CMakeFiles/Lexer.dir/Lexer.cpp.o"
   "CMakeFiles/Lexer.dir/NFA_DFA.cpp.o"
   "CMakeFiles/Lexer.dir/READ_File.cpp.o"

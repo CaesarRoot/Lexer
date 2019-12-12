@@ -90,6 +90,9 @@
 		<Unit filename="/Users/cengshaoxun/Programs/Lexer/DFA_DFAo.h">
 			<Option target="Lexer"/>
 		</Unit>
+		<Unit filename="/Users/cengshaoxun/Programs/Lexer/Generate_C.cpp">
+			<Option target="Lexer"/>
+		</Unit>
 		<Unit filename="/Users/cengshaoxun/Programs/Lexer/Lexer.cpp">
 			<Option target="Lexer"/>
 		</Unit>

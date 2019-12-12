@@ -5,6 +5,9 @@ CMakeFiles/Lexer.dir/DFA_DFAo.cpp.o: ../DFA_DFAo.cpp
 CMakeFiles/Lexer.dir/DFA_DFAo.cpp.o: ../DFA_DFAo.h
 CMakeFiles/Lexer.dir/DFA_DFAo.cpp.o: ../type.h
 
+CMakeFiles/Lexer.dir/Generate_C.cpp.o: ../Generate_C.cpp
+CMakeFiles/Lexer.dir/Generate_C.cpp.o: ../type.h
+
 CMakeFiles/Lexer.dir/Lexer.cpp.o: ../DFA_DFAo.h
 CMakeFiles/Lexer.dir/Lexer.cpp.o: ../Lexer.cpp
 CMakeFiles/Lexer.dir/Lexer.cpp.o: ../NFA_DFA.h
